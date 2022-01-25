@@ -20,9 +20,11 @@ const BottomNavigator = () => {
       height: 100,
       borderTopRightRadius: 32,
       borderTopLeftRadius: 32,
-      justifyContent: 'center'
+      justifyContent: 'center',
+      position: 'relative'
     },
     tabContainer: {
+      position: 'relative',
       width: 50,
       height: 50,
       alignItems: 'center'
