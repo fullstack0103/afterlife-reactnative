@@ -17,7 +17,10 @@ theme.images = {
   icons: {
     phone: require('./assets/icons/phone.png'),
     message: require('./assets/icons/message.png'),
-    user: require('./assets/icons/user.png')
+    user: require('./assets/icons/user.png'),
+    wallet: require('./assets/icons/wallet.png'),
+    drop: require('./assets/icons/drop.png'),
+    list: require('./assets/icons/list.png')
   }
 }
 

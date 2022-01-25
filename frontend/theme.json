@@ -18,7 +18,10 @@
     "icons": {
       "phone": "",
       "message": "",
-      "user": ""
+      "user": "",
+      "wallet": "",
+      "drop": "",
+      "list": ""
     }
   }
 }

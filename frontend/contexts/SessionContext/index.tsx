@@ -38,6 +38,7 @@ export const SessionProvider = ({ children, strategy }) => {
   }
 
   const login = async (values) => {
+    await strategy.setItem('token', 'test_token')
     // await strategy.setItem('token', values.token)
     // await strategy.setItem('user', values.user, true)
     setState({

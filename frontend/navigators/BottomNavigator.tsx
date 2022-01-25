@@ -1,9 +1,9 @@
 import React from 'react'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import { View, StyleSheet } from 'react-native'
 import { useTheme } from 'styled-components/native'
 
+import { AIcon } from '../components/Shared'
 import { LifeDashboard } from '../pages/LifeDashboard'
 import { DappList } from '../pages/DappList'
 import { Faucet } from '../pages/Faucet'
@@ -15,25 +15,28 @@ const BottomNavigator = () => {
   const theme = useTheme()
 
   const styles = StyleSheet.create({
+    barStyle: {
+      backgroundColor: theme.colors.white,
+      height: 100,
+      borderTopRightRadius: 32,
+      borderTopLeftRadius: 32,
+      justifyContent: 'center'
+    },
     tabContainer: {
       width: 50,
       height: 50,
-      justifyContent: 'flex-start',
-      position: 'relative',
-      bottom: 10
+      alignItems: 'center'
     },
+    tabIcon: {
+      width: 46
+    }
   })
 
   return (
     <Tab.Navigator
       initialRouteName='DappList'
       labeled={false}
-      barStyle={{
-        backgroundColor: theme.colors.white,
-        height: 40,
-        position: 'relative',
-        bottom: 15
-      }}
+      barStyle={styles.barStyle}
       activeColor={theme.colors.primary}
       inactiveColor={theme.colors.headingColor}
     >
@@ -46,7 +49,13 @@ const BottomNavigator = () => {
               <View
                 style={styles.tabContainer}
               >
-                <MaterialCommunityIcon name='wallet' size={46} color={color} />
+                <AIcon
+                  src={theme.images.icons.wallet}
+                  style={{
+                    ...styles.tabIcon,
+                    tintColor: color
+                  }}
+                />
               </View>
             )
         }}
@@ -60,7 +69,13 @@ const BottomNavigator = () => {
               <View
                 style={styles.tabContainer}
               >
-                <MaterialCommunityIcon name='home' size={46} color={color} />
+                <AIcon
+                  src={theme.images.icons.list}
+                  style={{
+                    ...styles.tabIcon,
+                    tintColor: color
+                  }}
+                />
               </View>
             )
         }}
@@ -74,7 +89,13 @@ const BottomNavigator = () => {
               <View
                 style={styles.tabContainer}
               >
-                <MaterialCommunityIcon name='balloon' size={46} color={color} />
+                <AIcon
+                  src={theme.images.icons.drop}
+                  style={{
+                    ...styles.tabIcon,
+                    tintColor: color
+                  }}
+                />
               </View>
             )
         }}
@@ -88,7 +109,13 @@ const BottomNavigator = () => {
               <View
                 style={styles.tabContainer}
               >
-                <MaterialCommunityIcon name='user' size={46} color={color} />
+                <AIcon
+                  src={theme.images.icons.user}
+                  style={{
+                    ...styles.tabIcon,
+                    tintColor: color
+                  }}
+                />
               </View>
             )
         }}
