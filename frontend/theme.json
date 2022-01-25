@@ -7,7 +7,8 @@
     "gray": "#8F92A1",
     "lightGray": "#F6F7FB",
     "white": "#FFFFFF",
-    "error": "#C90800"
+    "error": "#C90800",
+    "borderColor": "#F6F6F6"
   },
   "images": {
     "general": {
@@ -21,7 +22,12 @@
       "user": "",
       "wallet": "",
       "drop": "",
-      "list": ""
+      "list": "",
+      "history": "",
+      "exchange": "",
+      "transfer": "",
+      "market": "",
+      "fund": ""
     }
   }
 }

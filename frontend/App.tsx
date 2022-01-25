@@ -1,4 +1,5 @@
 
+import 'react-native-gesture-handler'
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -20,7 +21,12 @@ theme.images = {
     user: require('./assets/icons/user.png'),
     wallet: require('./assets/icons/wallet.png'),
     drop: require('./assets/icons/drop.png'),
-    list: require('./assets/icons/list.png')
+    list: require('./assets/icons/list.png'),
+    history: require('./assets/icons/history.png'),
+    exchange: require('./assets/icons/exchange.png'),
+    transfer: require('./assets/icons/transfer.png'),
+    market: require('./assets/icons/market.png'),
+    fund: require('./assets/icons/fund.png')
   }
 }
 
