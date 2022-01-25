@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react'
+import { useSession } from '../../contexts/SessionContext'
 import { StyleSheet, Platform, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import { AText, AButton, AIcon } from '../Shared'
 import { PhoneInputNumber } from '../PhoneInputNumber'
@@ -13,6 +14,7 @@ import {
 import { useTheme } from 'styled-components/native';
 
 export const SignupForm = (props) => {
+  const [, { login }] = useSession()
   const theme = useTheme();
   const inputRef = useRef<any>({})
 
@@ -25,7 +27,8 @@ export const SignupForm = (props) => {
   });
 
   const handleSignUp = () => {
-    console.log('get Started')
+    login()
+    // console.log('get Started')
   }
 
   const styles = StyleSheet.create({
