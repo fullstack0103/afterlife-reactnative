@@ -4,7 +4,9 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import AppContainer from './AppContainer';
 import { ThemeProvider } from './contexts/Theme';
+import { SessionProvider } from './contexts/SessionContext';
 import theme from './theme.json';
+import { NativeStrategy } from './NativeStrategy';
 
 theme.images = {
   general: {
@@ -21,6 +23,8 @@ theme.images = {
 
 
 export default function App(): JSX.Element {
+  const nativeStrategy = new NativeStrategy()
+
   return (
     // <View style={[StyleSheet.absoluteFill, styles.center, styles.white]}>
     //   <Text testID="tid-message">{message}</Text>
@@ -42,9 +46,11 @@ export default function App(): JSX.Element {
     // </View>
 
     <SafeAreaProvider>
-      <ThemeProvider theme={theme}>
-        <AppContainer />
-      </ThemeProvider>
+      <SessionProvider strategy={nativeStrategy}>
+        <ThemeProvider theme={theme}>
+          <AppContainer />
+        </ThemeProvider>
+      </SessionProvider>
     </SafeAreaProvider>
   );
 }
