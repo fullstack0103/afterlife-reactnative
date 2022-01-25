@@ -1,0 +1,24 @@
+{
+  "colors": {
+    "primary": "#0F6EFF",
+    "primaryContrast": "#FFF",
+    "secondary": "#00CC96",
+    "headingColor": "#2D2D2D",
+    "gray": "#8F92A1",
+    "lightGray": "#F6F7FB",
+    "white": "#FFFFFF",
+    "error": "#C90800"
+  },
+  "images": {
+    "general": {
+      "logo": "",
+      "home1": "",
+      "homeImage": ""
+    },
+    "icons": {
+      "phone": "",
+      "message": "",
+      "user": ""
+    }
+  }
+}
