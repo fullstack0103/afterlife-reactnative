@@ -1,41 +1,51 @@
 import React from 'react'
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { View, StyleSheet } from 'react-native'
+import { AIcon } from '../components/Shared'
 import { useTheme } from 'styled-components/native'
 
+import DappListNavigator from './DappListNavigator'
 import { LifeDashboard } from '../pages/LifeDashboard'
-import { DappList } from '../pages/DappList'
 import { Faucet } from '../pages/Faucet'
 import { Profile } from '../pages/Profile'
 
-const Tab = createMaterialBottomTabNavigator();
+import { ExpandedBottomTab } from '../components/ExpandedBottomTab'
+
+const Tab = createBottomTabNavigator()
 
 const BottomNavigator = () => {
   const theme = useTheme()
-
   const styles = StyleSheet.create({
+    barStyle: {
+      backgroundColor: theme.colors.white,
+      height: 110,
+      borderTopRightRadius: 32,
+      borderTopLeftRadius: 32,
+      position: 'relative',
+      paddingTop: 20,
+      borderColor: theme.colors.white,
+    },
     tabContainer: {
+      position: 'relative',
       width: 50,
       height: 50,
-      justifyContent: 'flex-start',
-      position: 'relative',
-      bottom: 10
+      alignItems: 'center',
+      justifyContent: 'center'
     },
+    tabIcon: {
+      width: 40
+    }
   })
 
   return (
     <Tab.Navigator
-      initialRouteName='DappList'
-      labeled={false}
-      barStyle={{
-        backgroundColor: theme.colors.white,
-        height: 40,
-        position: 'relative',
-        bottom: 15
+      screenOptions={{
+        tabBarStyle: {
+          ...styles.barStyle
+        },
+        headerShown: false,
+        tabBarShowLabel: false
       }}
-      activeColor={theme.colors.primary}
-      inactiveColor={theme.colors.headingColor}
     >
       <Tab.Screen
         name='LifeDashboard'
@@ -46,25 +56,70 @@ const BottomNavigator = () => {
               <View
                 style={styles.tabContainer}
               >
-                <MaterialCommunityIcon name='wallet' size={46} color={color} />
+                <AIcon
+                  src={theme.images.icons.wallet}
+                  style={{
+                    ...styles.tabIcon,
+                    tintColor: color
+                  }}
+                />
               </View>
             )
         }}
       />
       <Tab.Screen
-        name='DappList'
-        component={DappList}
+        name='DappListStack'
+        component={DappListNavigator}
         options={{
           tabBarIcon:
             ({ color }: any) => (
               <View
                 style={styles.tabContainer}
               >
-                <MaterialCommunityIcon name='home' size={46} color={color} />
+                <AIcon
+                  src={theme.images.icons.list}
+                  style={{
+                    ...styles.tabIcon,
+                    tintColor: color
+                  }}
+                />
               </View>
             )
         }}
       />
+      
+      {/* <Tab.Screen
+        name="Add"
+        component={AddScreenComponent}
+        options={{
+          tabBarButton: () => <AddBottomSheet />,
+        }}
+      /> */}
+
+      <Tab.Screen
+        name='ExpanedBottom'
+        component={AddScreenComponent}
+        options={{
+          // tabBarIcon:
+          //   ({ color }: any) => (
+          //     <View
+          //       style={styles.tabContainer}
+          //     >
+          //       <AIcon
+          //         src={theme.images.icons.drop}
+          //         style={{
+          //           ...styles.tabIcon,
+          //           tintColor: color
+          //         }}
+          //       />
+          //     </View>
+          //   ),
+          tabBarButton: (props) => (
+            <ExpandedBottomTab {...props} />
+          )
+        }}
+      />
+    
       <Tab.Screen
         name='Faucet'
         component={Faucet}
@@ -74,7 +129,13 @@ const BottomNavigator = () => {
               <View
                 style={styles.tabContainer}
               >
-                <MaterialCommunityIcon name='balloon' size={46} color={color} />
+                <AIcon
+                  src={theme.images.icons.drop}
+                  style={{
+                    ...styles.tabIcon,
+                    tintColor: color
+                  }}
+                />
               </View>
             )
         }}
@@ -88,7 +149,13 @@ const BottomNavigator = () => {
               <View
                 style={styles.tabContainer}
               >
-                <MaterialCommunityIcon name='user' size={46} color={color} />
+                <AIcon
+                  src={theme.images.icons.user}
+                  style={{
+                    ...styles.tabIcon,
+                    tintColor: color
+                  }}
+                />
               </View>
             )
         }}
@@ -98,3 +165,7 @@ const BottomNavigator = () => {
 }
 
 export default BottomNavigator
+
+const AddScreenComponent = () => {
+  return null;
+}
