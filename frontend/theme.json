@@ -17,6 +17,7 @@
       "homeImage": ""
     },
     "icons": {
+      "notification": "",
       "phone": "",
       "message": "",
       "user": "",
@@ -27,7 +28,8 @@
       "exchange": "",
       "transfer": "",
       "market": "",
-      "fund": ""
+      "fund": "",
+      "plus": ""
     }
   }
 }

@@ -16,6 +16,7 @@ theme.images = {
     homeImage: require('./assets/images/home-image.png')
   },
   icons: {
+    notification: require('./assets/icons/notification.png'),
     phone: require('./assets/icons/phone.png'),
     message: require('./assets/icons/message.png'),
     user: require('./assets/icons/user.png'),
@@ -26,7 +27,8 @@ theme.images = {
     exchange: require('./assets/icons/exchange.png'),
     transfer: require('./assets/icons/transfer.png'),
     market: require('./assets/icons/market.png'),
-    fund: require('./assets/icons/fund.png')
+    fund: require('./assets/icons/fund.png'),
+    plus: require('./assets/icons/plus.png')
   }
 }
 
