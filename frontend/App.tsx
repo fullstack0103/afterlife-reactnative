@@ -15,9 +15,11 @@ theme.images = {
     homeImage: require('./assets/images/home-image.png')
   },
   icons: {
+    notification: require('./assets/icons/notification.png'),
     phone: require('./assets/icons/phone.png'),
     message: require('./assets/icons/message.png'),
-    user: require('./assets/icons/user.png')
+    user: require('./assets/icons/user.png'),
+    plus: require('./assets/icons/plus.png')
   }
 }
 

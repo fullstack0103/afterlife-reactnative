@@ -16,9 +16,11 @@
       "homeImage": ""
     },
     "icons": {
+      "notification": "",
       "phone": "",
       "message": "",
-      "user": ""
+      "user": "",
+      "plus": ""
     }
   }
 }
