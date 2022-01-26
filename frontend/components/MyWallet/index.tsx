@@ -2,6 +2,8 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { AText, AIcon, AButton, BottomSheet } from '../Shared'
 import { useTheme } from 'styled-components/native'
+import { ScrollView } from 'react-native-gesture-handler'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import {
   Container,
@@ -53,6 +55,15 @@ export const MyWallet = (props) => {
         isForceExpand
       >
         <AText style={styles.myCardTitle}>My Cards</AText>
+        <ScrollView
+          horizontal
+        >
+          <AButton
+            imgLeftSrc={theme.images.icons.plus}
+            imgLeftStyle={{ tintColor: '#8F92A1', width: 18, height: 18 }}
+            style={styles.addBtn}
+          />
+        </ScrollView>
       </BottomSheet>
     </Container>
   )
@@ -105,5 +116,13 @@ const styles = StyleSheet.create({
     color: '#2D2D2D',
     fontSize: 22,
     fontWeight: '700'
+  },
+  addBtn: {
+    backgroundColor: '#8f92a133',
+    borderColor: '#8f92a133',
+    width: 38,
+    height: 48,
+    paddingLeft: 0,
+    paddingRight: 0
   }
 })
