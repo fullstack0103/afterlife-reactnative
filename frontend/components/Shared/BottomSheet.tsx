@@ -10,7 +10,7 @@ const BottomSheet = (props) => {
     isForceExpand
   } = props
 
-  const sheetHeight = props?.maxHeight ? height * props.maxHeight : height / 2.4
+  const sheetHeight = props?.sheetHeight ? props.sheetHeight : height / 2.4
 
   const styles = StyleSheet.create({
     contaner: {
