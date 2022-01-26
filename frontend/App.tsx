@@ -37,7 +37,9 @@ theme.images = {
     clock: require('./assets/icons/clock.png'),
     instant: require('./assets/icons/instant.png'),
     ethereum: require('./assets/icons/ethereum.png'),
-    bitcoin: require('./assets/icons/bitcoin.png')
+    bitcoin: require('./assets/icons/bitcoin.png'),
+    ethereumLogo: require('./assets/icons/ethereum-logo.png'),
+    limit: require('./assets/icons/limit.png')
   }
 }
 
