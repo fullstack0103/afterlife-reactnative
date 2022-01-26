@@ -40,7 +40,7 @@ export const ExpandedBottomTab = (props) => {
 
   const mainTabOptions = [
     { key: 'home', name: 'Home', icon: theme.images.icons.list },
-    { key: 'wallet', name: 'Wallet', icon: theme.images.icons.wallet },
+    { key: 'MyWallet', name: 'Wallet', icon: theme.images.icons.wallet },
     { key: 'history', name: 'History', icon: theme.images.icons.history },
     { key: 'profile', name: 'Profile', icon: theme.images.icons.user }
   ]
@@ -113,6 +113,7 @@ export const ExpandedBottomTab = (props) => {
                 {mainTabOptions.map(tab => (
                   <TabContainer
                     key={tab.key}
+                    onPress={() => handleNavigation(tab.key)}
                   >
                     <View style={styles.tabWrapper}>
                       <AIcon
