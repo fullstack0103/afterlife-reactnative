@@ -19,6 +19,7 @@ export const LifeBalance = (props: any) => {
         <AButton
           text='Receive'
           textStyle={{ color: 'white' }}
+          onClick={() => onNavigationRedirect('ReceiveLife')}
         />
       </View>
     </View>

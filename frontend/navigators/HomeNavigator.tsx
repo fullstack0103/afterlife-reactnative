@@ -5,13 +5,15 @@ import RootNavigator from './RootNavigator'
 import BottomNavigator from './BottomNavigator'
 import LifeBalance from '../pages/LifeBalance'
 import SendLife from '../pages/SendLife'
+import ReceiveLife from '../pages/ReceiveLife'
+import GeneratedLifeReceival from '../pages/GeneratedLifeReceival'
 
 import { Exchange } from '../pages/Exchange'
 
 const Stack = createStackNavigator();
 
 const HomeNavigator = (e : any) => {
-  const [{ auth }] = useSession()
+  const [{ auth }]: any = useSession()
   return (
     <Stack.Navigator>
       {auth ? (
@@ -22,6 +24,11 @@ const HomeNavigator = (e : any) => {
             options={{ headerShown: false }}
           />
           <Stack.Screen
+            name='GeneratedLifeReceival'
+            component={GeneratedLifeReceival}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
             name='LifeBalance'
             component={LifeBalance}
             options={{ headerShown: false }}
@@ -29,6 +36,11 @@ const HomeNavigator = (e : any) => {
           <Stack.Screen
             name='SendLife'
             component={SendLife}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='ReceiveLife'
+            component={ReceiveLife}
             options={{ headerShown: false }}
           />
           <Stack.Screen
