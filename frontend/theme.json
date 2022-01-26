@@ -38,7 +38,9 @@
       "clock": "",
       "instant": "",
       "ethereum": "",
-      "bitcoin": ""
+      "bitcoin": "",
+      "ethereumLogo": "",
+      "limit": ""
     }
   }
 }

@@ -5,8 +5,8 @@ import { AIcon } from '../components/Shared'
 import { useTheme } from 'styled-components/native'
 
 import DappListNavigator from './DappListNavigator'
+import FaucetNavigator from './FaucetNavigator'
 import { LifeDashboard } from '../pages/LifeDashboard'
-import { Faucet } from '../pages/Faucet'
 import { Profile } from '../pages/Profile'
 
 import { ExpandedBottomTab } from '../components/ExpandedBottomTab'
@@ -99,8 +99,8 @@ const BottomNavigator = () => {
       />
     
       <Tab.Screen
-        name='Faucet'
-        component={Faucet}
+        name='FaucetNavigator'
+        component={FaucetNavigator}
         options={{
           tabBarIcon:
             ({ color }: any) => (
