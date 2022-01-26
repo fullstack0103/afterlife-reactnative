@@ -9,7 +9,7 @@ import styled from 'styled-components/native';
 const StyledButton = styled.View`
   background-color: ${props => props.theme.colors.primary};
   border-radius: 12px;
-  border-width: 2px;
+  border-width: 1px;
   height: 58px;
   border-color: ${props => props.theme.colors.primary};
   flex-direction: row;

@@ -39,7 +39,8 @@ theme.images = {
     ethereum: require('./assets/icons/ethereum.png'),
     bitcoin: require('./assets/icons/bitcoin.png'),
     ethereumLogo: require('./assets/icons/ethereum-logo.png'),
-    limit: require('./assets/icons/limit.png')
+    limit: require('./assets/icons/limit.png'),
+    avatar: require('./assets/avatars/avatar.png')
   }
 }
 
