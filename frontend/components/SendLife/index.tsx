@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
 import { useTheme } from 'styled-components/native'
-import { AButton, AIcon, AText } from '../Shared'
+import { AButton, AText } from '../Shared'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import {
   SendLifeContainer,
@@ -189,7 +189,7 @@ export const SendLife = (props: any) => {
                 style={{ fontSize: 14, fontWeight: '700' }}
                 color='#2D2D2D'
               >
-                Send to Contact
+                Send to Contact 
               </AText>
               <AText
                 style={{ fontSize: 14 }}

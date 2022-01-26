@@ -14,9 +14,11 @@
     "general": {
       "logo": "",
       "home1": "",
-      "homeImage": ""
+      "homeImage": "",
+      "barcodeFrame": ""
     },
     "icons": {
+      "clipboard": "",
       "multiUser": "",
       "barcode": "",
       "rightDownArrow": "",
