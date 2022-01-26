@@ -13,9 +13,11 @@ theme.images = {
   general: {
     logo: require('./assets/images/logo.png'),
     home1: require('./assets/images/home-1.png'),
-    homeImage: require('./assets/images/home-image.png')
+    homeImage: require('./assets/images/home-image.png'),
+    barcodeFrame: require('./assets/images/barcode-frame.png'),
   },
   icons: {
+    clipboard: require('./assets/icons/clipboard.png'),
     multiUser: require('./assets/icons/multi-user.png'),
     barcode: require('./assets/icons/barcode.png'),
     rightDownArrow: require('./assets/icons/right-down-arrow.png'),
