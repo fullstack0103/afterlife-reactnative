@@ -45,7 +45,11 @@
       "ripple": "",
       "ethereumLogo": "",
       "limit": "",
-      "avatar": ""
+      "avatar": "",
+      "masterLogo": "",
+      "cardChip": "",
+      "visaLogo": "",
+      "horizontalDots": ""
     }
   }
 }

@@ -44,7 +44,11 @@ theme.images = {
     ripple: require('./assets/icons/ripple.png'),
     ethereumLogo: require('./assets/icons/ethereum-logo.png'),
     limit: require('./assets/icons/limit.png'),
-    avatar: require('./assets/avatars/avatar.png')
+    avatar: require('./assets/avatars/avatar.png'),
+    masterLogo: require('./assets/icons/master-logo.png'),
+    cardChip: require('./assets/icons/card-chip.png'),
+    visaLogo: require('./assets/icons/visa-logo.png'),
+    horizontalDots: require('./assets/icons/horizontal-dots.png')
   }
 }
 
