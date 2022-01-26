@@ -17,6 +17,7 @@ theme.images = {
     barcodeFrame: require('./assets/images/barcode-frame.png'),
   },
   icons: {
+    arrowDown: require('./assets/icons/arrow-down.png'),
     clipboard: require('./assets/icons/clipboard.png'),
     multiUser: require('./assets/icons/multi-user.png'),
     barcode: require('./assets/icons/barcode.png'),
@@ -40,6 +41,7 @@ theme.images = {
     instant: require('./assets/icons/instant.png'),
     ethereum: require('./assets/icons/ethereum.png'),
     bitcoin: require('./assets/icons/bitcoin.png'),
+    ripple: require('./assets/icons/ripple.png'),
     ethereumLogo: require('./assets/icons/ethereum-logo.png'),
     limit: require('./assets/icons/limit.png'),
     avatar: require('./assets/avatars/avatar.png')
