@@ -48,7 +48,7 @@ export const ExpandedBottomTab = (props) => {
   const moreTabOptions = [
     { key: 'Exchange', name: 'Exchange', icon: theme.images.icons.exchange },
     { key: 'Transfer', name: 'Transfer', icon: theme.images.icons.transfer },
-    { key: 'Market', name: 'Market Overview', icon: theme.images.icons.market },
+    { key: 'CryptoWallet', name: 'Market Overview', icon: theme.images.icons.market },
     { key: 'Fund', name: 'Load Funds', icon: theme.images.icons.fund }
   ]
 
