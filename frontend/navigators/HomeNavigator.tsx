@@ -9,6 +9,7 @@ import ReceiveLife from '../pages/ReceiveLife'
 import GeneratedLifeReceival from '../pages/GeneratedLifeReceival'
 import MyWallet from '../pages/MyWallet'
 import SingleCard from '../pages/SingleCard'
+import CryptoWallet from '../pages/CryptoWallet'
 
 import { Exchange } from '../pages/Exchange'
 
@@ -48,6 +49,11 @@ const HomeNavigator = (e : any) => {
           <Stack.Screen
             name='Exchange'
             component={Exchange}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='CryptoWallet'
+            component={CryptoWallet}
             options={{ headerShown: false }}
           />
           <Stack.Screen
