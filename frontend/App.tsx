@@ -16,6 +16,10 @@ theme.images = {
     homeImage: require('./assets/images/home-image.png')
   },
   icons: {
+    multiUser: require('./assets/icons/multi-user.png'),
+    barcode: require('./assets/icons/barcode.png'),
+    rightDownArrow: require('./assets/icons/right-down-arrow.png'),
+    rightUpArrow: require('./assets/icons/right-up-arrow.png'),
     notification: require('./assets/icons/notification.png'),
     phone: require('./assets/icons/phone.png'),
     message: require('./assets/icons/message.png'),
