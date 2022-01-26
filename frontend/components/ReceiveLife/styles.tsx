@@ -28,7 +28,7 @@ export const ColorBox = styled.View`
   width: 38px;
   height: 38px;
   margin-right: 11px;
-  border-radius: 10px;
+  border-radius: 12px;
   background-color: ${(props: any) => props.boxColor && props.boxColor};
 `
 
