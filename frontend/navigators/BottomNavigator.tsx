@@ -23,7 +23,7 @@ const BottomNavigator = () => {
       borderTopLeftRadius: 32,
       position: 'relative',
       paddingTop: 20,
-      borderColor: theme.colors.white,
+      borderColor: theme.colors.white
     },
     tabContainer: {
       position: 'relative',
@@ -87,34 +87,12 @@ const BottomNavigator = () => {
             )
         }}
       />
-      
-      {/* <Tab.Screen
-        name="Add"
-        component={AddScreenComponent}
-        options={{
-          tabBarButton: () => <AddBottomSheet />,
-        }}
-      /> */}
 
       <Tab.Screen
         name='ExpanedBottom'
         component={AddScreenComponent}
         options={{
-          // tabBarIcon:
-          //   ({ color }: any) => (
-          //     <View
-          //       style={styles.tabContainer}
-          //     >
-          //       <AIcon
-          //         src={theme.images.icons.drop}
-          //         style={{
-          //           ...styles.tabIcon,
-          //           tintColor: color
-          //         }}
-          //       />
-          //     </View>
-          //   ),
-          tabBarButton: (props) => (
+             tabBarButton: (props) => (
             <ExpandedBottomTab {...props} />
           )
         }}
