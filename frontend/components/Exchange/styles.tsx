@@ -13,3 +13,11 @@ export const CardContainer = styled.View`
   padding: 18px;
   margin: 40px 0 28px 0;
 `
+export const CurrencyValueContainer = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-color: #F6F6F6;
+  border-bottom-width: 1px;
+  margin: 28px 0 5px 0;
+`
