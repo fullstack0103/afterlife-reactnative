@@ -70,7 +70,7 @@ export const GeneratedLifeReceival = (props: any) => {
                 style={{ fontSize: 14, fontWeight: '700' }}
                 color='#2D2D2D'
               >
-                Your LIFE Address
+                Your LIFE Address 
               </AText>
               <AText
                 style={{ fontSize: 14 }}
