@@ -13,7 +13,7 @@ export const MainTabContainer = styled.View`
   border-bottom-width: 1px;
   border-bottom-color: #F6F6F6;
 `
-export const TabContainer = styled.View`
+export const TabContainer = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { View, StyleSheet, TouchableOpacity as TouchableButton } from 'react-native'
+import { View, StyleSheet, ScrollView, TouchableOpacity as TouchableButton } from 'react-native'
 import { ABottomPopup, AButton, AIcon, AText } from '../Shared'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { useTheme } from 'styled-components/native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { useNavigation } from '@react-navigation/native'
 
 import {
   ExpandContainer,
@@ -13,17 +14,18 @@ import {
   MoreTabContainer
 } from './styles'
 
-export const ExpandedBottomTab = () => {
+export const ExpandedBottomTab = (props) => {
+  const navigation = useNavigation()
   const theme = useTheme()
   const [openModal, setOpenModal] = useState(false)
 
   const styles = StyleSheet.create({
     tabLabel: {
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: '700'
     },
     tabIcon: {
-      width: 40,
+      width: 20,
       marginRight: 12
     },
     tabWrapper: {
@@ -32,7 +34,7 @@ export const ExpandedBottomTab = () => {
     closeBtn: {
       backgroundColor: '#FFF',
       borderColor: '#F6F6F6',
-      height: 60
+      height: 58
     }
   })
 
@@ -44,11 +46,15 @@ export const ExpandedBottomTab = () => {
   ]
 
   const moreTabOptions = [
-    { key: 'exchange', name: 'Exchange', icon: theme.images.icons.exchange },
-    { key: 'transfer', name: 'Transfer', icon: theme.images.icons.transfer },
-    { key: 'market', name: 'Market Overview', icon: theme.images.icons.market },
-    { key: 'fund', name: 'Load Funds', icon: theme.images.icons.fund }
+    { key: 'Exchange', name: 'Exchange', icon: theme.images.icons.exchange },
+    { key: 'Transfer', name: 'Transfer', icon: theme.images.icons.transfer },
+    { key: 'Market', name: 'Market Overview', icon: theme.images.icons.market },
+    { key: 'Fund', name: 'Load Funds', icon: theme.images.icons.fund }
   ]
+
+  const handleNavigation = (page) => {
+    navigation.navigate(page);
+  }
 
   return (
     <>
@@ -59,13 +65,11 @@ export const ExpandedBottomTab = () => {
           alignItems: 'center',
           width: '100%',
           top: -10,
-          // zIndex: 9999,
         }}
       >
         <TouchableOpacity
           style={{
             paddingVertical: 5,
-            // zIndex: 10,
             position: 'relative',
             flex: 1
           }}
@@ -73,8 +77,8 @@ export const ExpandedBottomTab = () => {
         >
           <View
             style={{
-              width: 80,
-              height: 10,
+              width: 40,
+              height: 5,
               backgroundColor: '#2d2d2d33',
               borderRadius: 5
             }}
@@ -96,78 +100,81 @@ export const ExpandedBottomTab = () => {
               >
                 <View
                   style={{
-                    width: 80,
-                    height: 10,
+                    width: 40,
+                    height: 5,
                     backgroundColor: '#2d2d2d33',
                     borderRadius: 5
                   }}
                 />
               </TouchableButton>
             </CollapseContainer>
-            <MainTabContainer>
-              {mainTabOptions.map(tab => (
-                <TabContainer
-                  key={tab.key}
-                >
-                  <View style={styles.tabWrapper}>
-                    <AIcon
-                      src={tab.icon}
-                      style={{
-                        ...styles.tabIcon,
-                        tintColor: theme.colors.primary
-                      }}
+            <ScrollView showsVerticalScrollIndicator={false}>
+              <MainTabContainer>
+                {mainTabOptions.map(tab => (
+                  <TabContainer
+                    key={tab.key}
+                  >
+                    <View style={styles.tabWrapper}>
+                      <AIcon
+                        src={tab.icon}
+                        style={{
+                          ...styles.tabIcon,
+                          tintColor: theme.colors.primary
+                        }}
+                      />
+                      <AText style={styles.tabLabel}>{tab.name}</AText>
+                    </View>
+                    <MaterialCommunityIcons
+                      name='drag-horizontal'
+                      size={20}
+                      color='#8F92A1'
                     />
-                    <AText style={styles.tabLabel}>{tab.name}</AText>
-                  </View>
-                  <MaterialCommunityIcons
-                    name='drag-horizontal'
-                    size={30}
-                    color='#8F92A1'
-                  />
-                </TabContainer>
-              ))}            
-            </MainTabContainer>
+                  </TabContainer>
+                ))}            
+              </MainTabContainer>
 
-            <MoreTabContainer>
-              {moreTabOptions.map(tab => (
-                <TabContainer
-                  key={tab.key}
-                >
-                  <View style={styles.tabWrapper}>
-                    <AIcon
-                      src={tab.icon}
-                      style={{
-                        ...styles.tabIcon,
-                        tintColor: '#8F92A1'
-                      }}
+              <MoreTabContainer>
+                {moreTabOptions.map(tab => (
+                  <TabContainer
+                    key={tab.key}
+                    onPress={() => handleNavigation(tab.key)}
+                  >
+                    <View style={styles.tabWrapper}>
+                      <AIcon
+                        src={tab.icon}
+                        style={{
+                          ...styles.tabIcon,
+                          tintColor: '#8F92A1'
+                        }}
+                      />
+                      <AText
+                        style={{
+                          ...styles.tabLabel,
+                          color: '#8F92A1'
+                        }}
+                      >
+                          {tab.name}
+                      </AText>
+                    </View>
+                    <MaterialCommunityIcons
+                      name='drag-horizontal'
+                      size={20}
+                      color='#8F92A1'
                     />
-                    <AText
-                      style={{
-                        ...styles.tabLabel,
-                        color: '#8F92A1'
-                      }}
-                    >
-                        {tab.name}
-                    </AText>
-                  </View>
-                  <MaterialCommunityIcons
-                    name='drag-horizontal'
-                    size={30}
-                    color='#8F92A1'
-                  />
-                </TabContainer>
-              ))} 
-            </MoreTabContainer>
+                  </TabContainer>
+                ))} 
+              </MoreTabContainer>
 
-            <AButton
-              text='Close'
-              style={styles.closeBtn}
-              textStyle={{
-                fontSize: 20,
-                fontWeight: '700'
-              }}
-              onClick={() => setOpenModal(false)}
-            />
+              <AButton
+                text='Close'
+                style={styles.closeBtn}
+                textStyle={{
+                  fontSize: 16,
+                  fontWeight: '700'
+                }}
+                onClick={() => setOpenModal(false)}
+              />
+            </ScrollView>
           </ExpandContainer>
         </ABottomPopup>
       )}
