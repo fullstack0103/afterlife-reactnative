@@ -3,7 +3,6 @@ import { View, StyleSheet } from 'react-native'
 import { AText, AIcon, AButton, BottomSheet } from '../Shared'
 import { useTheme } from 'styled-components/native'
 import { ScrollView } from 'react-native-gesture-handler'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import {
   Container,
@@ -53,16 +52,76 @@ export const MyWallet = (props) => {
       </View>
       <BottomSheet
         isForceExpand
+        sheetHeight={340}
       >
         <AText style={styles.myCardTitle}>My Cards</AText>
         <ScrollView
           horizontal
+          contentContainerStyle={{ paddingVertical: 20 }}
         >
-          <AButton
-            imgLeftSrc={theme.images.icons.plus}
-            imgLeftStyle={{ tintColor: '#8F92A1', width: 18, height: 18 }}
-            style={styles.addBtn}
-          />
+          <View style={{ marginRight: 10, justifyContent: 'center' }}>
+            <AButton
+              imgLeftSrc={theme.images.icons.plus}
+              imgLeftStyle={{ tintColor: '#8F92A1', width: 18, height: 18 }}
+              style={styles.addBtn}
+            />
+          </View>
+    
+          <View
+            style={{ ...styles.walletCard, backgroundColor: '#051C3F' }}
+          >
+            <View style={styles.walletCardHeader}>
+              <AIcon
+                src={theme.images.icons.cardChip}
+                style={{ width: 20, height: 25 }}
+              />
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <AIcon
+                  src={theme.images.icons.horizontalDots}
+                  style={{ width: 33, height: 16 }}
+                />
+                <AText style={styles.cardNumber}>1211</AText>
+              </View>
+            </View>
+            <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+              <AText style={{ color: '#FFF', fontSize: 14, fontWeight: '700' }}>Mastercard</AText>
+              <View style={styles.masterCardWrapper}>
+                <AText style={{ color: '#8F92A1', fontSize: 12 }}>Platinum</AText>
+                <AIcon
+                  src={theme.images.icons.masterLogo}
+                  style={{ width: 40, height: 25 }}
+                />
+              </View>
+            </View>
+          </View>
+          <View
+            style={{ ...styles.walletCard, backgroundColor: '#051C3F' }}
+          >
+            <View style={styles.walletCardHeader}>
+              <AIcon
+                src={theme.images.icons.cardChip}
+                style={{ width: 20, height: 25 }}
+              />
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <AIcon
+                  src={theme.images.icons.horizontalDots}
+                  style={{ width: 33, height: 16 }}
+                />
+                <AText style={styles.cardNumber}>1211</AText>
+              </View>
+            </View>
+            <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+              <AText style={{ color: '#FFF', fontSize: 14, fontWeight: '700' }}>Mastercard</AText>
+              <View style={styles.masterCardWrapper}>
+                <AText style={{ color: '#8F92A1', fontSize: 12 }}>Platinum</AText>
+                <AIcon
+                  src={theme.images.icons.masterLogo}
+                  style={{ width: 40, height: 25 }}
+                />
+              </View>
+            </View>
+          </View>
+     
         </ScrollView>
       </BottomSheet>
     </Container>
@@ -124,5 +183,28 @@ const styles = StyleSheet.create({
     height: 48,
     paddingLeft: 0,
     paddingRight: 0
+  },
+  walletCard: {
+    paddingHorizontal: 18,
+    paddingVertical: 28,
+    borderRadius: 12,
+    width: 163,
+    height: 220,
+    marginHorizontal: 10
+  },
+  masterCardWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  walletCardHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  cardNumber: {
+    color: '#FFF',
+    fontWeight: '700',
+    fontSize: 14
   }
 })

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, Dimensions } from 'react-native'
 import { AIcon, AText, AButton, BottomSheet } from '../Shared'
 import { useTheme } from 'styled-components/native'
 import {
@@ -9,6 +9,8 @@ import {
   BoxWrapper,
   ColorBox
 } from './styles'
+
+const { height } = Dimensions.get('screen')
 
 export const GeneratedLifeReceival = (props: any) => {
   const {
@@ -43,7 +45,7 @@ export const GeneratedLifeReceival = (props: any) => {
     <Container>
       <BottomSheet
         isForceExpand
-        maxHeight={0.8}
+        sheetHeight={height * 0.8}
         bgColor='#FFFFFF'
       >
         <View style={styles.contentStyle}>
