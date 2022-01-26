@@ -35,7 +35,9 @@ theme.images = {
     plus: require('./assets/icons/plus.png'),
     arrowLeft: require('./assets/icons/arrow-left.png'),
     clock: require('./assets/icons/clock.png'),
-    instant: require('./assets/icons/instant.png')
+    instant: require('./assets/icons/instant.png'),
+    ethereum: require('./assets/icons/ethereum.png'),
+    bitcoin: require('./assets/icons/bitcoin.png')
   }
 }
 
