@@ -10,6 +10,8 @@ const BottomSheet = (props) => {
     isForceExpand
   } = props
 
+  const sheetHeight = props?.maxHeight ? height * props.maxHeight : height / 2.4
+
   const styles = StyleSheet.create({
     contaner: {
       backgroundColor: props?.bgColor ||  '#F6F7FB',
@@ -17,7 +19,7 @@ const BottomSheet = (props) => {
       left: 0,
       right: 0,
       bottom: 0,
-      height: height / 2.4,
+      height: sheetHeight,
       width: width,
       borderTopRightRadius: 40,
       borderTopLeftRadius: 40,
@@ -57,7 +59,7 @@ const BottomSheet = (props) => {
 
   const actionSheetIntropolate = alignment.interpolate({
     inputRange: [0, 1],
-    outputRange: [-height / 2.4 + 40, 0]
+    outputRange: [-sheetHeight + 40, 0]
   })
 
   const actionSheetStyle = {
