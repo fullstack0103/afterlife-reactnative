@@ -4,6 +4,8 @@ import { useSession } from '../contexts/SessionContext'
 import RootNavigator from './RootNavigator'
 import BottomNavigator from './BottomNavigator';
 
+import { Exchange } from '../pages/Exchange'
+
 const Stack = createStackNavigator();
 
 const HomeNavigator = (e : any) => {
@@ -15,6 +17,11 @@ const HomeNavigator = (e : any) => {
           <Stack.Screen
             name='BottomTab'
             component={BottomNavigator}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='Exchange'
+            component={Exchange}
             options={{ headerShown: false }}
           />
         </>

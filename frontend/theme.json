@@ -29,7 +29,10 @@
       "transfer": "",
       "market": "",
       "fund": "",
-      "plus": ""
+      "plus": "",
+      "arrowLeft": "",
+      "clock": "",
+      "instant": ""
     }
   }
 }

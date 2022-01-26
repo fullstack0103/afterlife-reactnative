@@ -28,7 +28,10 @@ theme.images = {
     transfer: require('./assets/icons/transfer.png'),
     market: require('./assets/icons/market.png'),
     fund: require('./assets/icons/fund.png'),
-    plus: require('./assets/icons/plus.png')
+    plus: require('./assets/icons/plus.png'),
+    arrowLeft: require('./assets/icons/arrow-left.png'),
+    clock: require('./assets/icons/clock.png'),
+    instant: require('./assets/icons/instant.png')
   }
 }
 
