@@ -6,6 +6,8 @@ import BottomNavigator from './BottomNavigator'
 import LifeBalance from '../pages/LifeBalance'
 import SendLife from '../pages/SendLife'
 
+import { Exchange } from '../pages/Exchange'
+
 const Stack = createStackNavigator();
 
 const HomeNavigator = (e : any) => {
@@ -27,6 +29,11 @@ const HomeNavigator = (e : any) => {
           <Stack.Screen
             name='SendLife'
             component={SendLife}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='Exchange'
+            component={Exchange}
             options={{ headerShown: false }}
           />
         </>

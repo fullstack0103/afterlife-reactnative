@@ -7,12 +7,15 @@ const Stack = createStackNavigator();
 
 const DappListNavigator = (e : any) => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      initialRouteName='DappList'
+    >
       <Stack.Screen
         name='DappList'
         component={DappList}
         options={{ headerShown: false }}
       />
+
     </Stack.Navigator>
   )
 }

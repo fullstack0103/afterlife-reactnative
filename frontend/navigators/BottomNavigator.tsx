@@ -18,7 +18,7 @@ const BottomNavigator = () => {
   const styles = StyleSheet.create({
     barStyle: {
       backgroundColor: theme.colors.white,
-      height: 110,
+      height: 90,
       borderTopRightRadius: 32,
       borderTopLeftRadius: 32,
       position: 'relative',
@@ -33,7 +33,7 @@ const BottomNavigator = () => {
       justifyContent: 'center'
     },
     tabIcon: {
-      width: 40
+      width: 20
     }
   })
 
@@ -92,7 +92,7 @@ const BottomNavigator = () => {
         name='ExpanedBottom'
         component={AddScreenComponent}
         options={{
-             tabBarButton: (props) => (
+          tabBarButton: (props) => (
             <ExpandedBottomTab {...props} />
           )
         }}
