@@ -50,7 +50,7 @@ theme.images = {
     verticalDots: require('./assets/icons/vertical-dots.png'),
     lock: require('./assets/icons/lock.png'),
     transactionLogo1: require('./assets/icons/logo-1.png'),
-    transactionLogo2: require('./assets/icons/logo-1.png')
+    transactionLogo2: require('./assets/icons/logo-2.png')
   }
 }
 

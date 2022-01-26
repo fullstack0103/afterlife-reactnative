@@ -14,7 +14,7 @@ export const SingleCard = (props) => {
 
   const transactions = [
     { id: 1, name: 'Mc Donalds', logo: theme.images.icons.transactionLogo1, date: '26.07.2019 - 3:13 PM', price: '-$58,30' },
-    { id: 2, name: 'Starbucks Coffee', logo: theme.images.icons.transactionLogo2, date: '26.07.2019 - 3:13 PM', price: '-$58,30' },
+    { id: 2, name: 'Starbucks Coffee', logo: theme.images.icons.transactionLogo2, date: '26.07.2019 - 3:13 PM', price: '-$8,30' },
     { id: 3, name: 'Mc Donalds', logo: theme.images.icons.transactionLogo1, date: '26.07.2019 - 3:13 PM', price: '-$58,30' },
     { id: 4, name: 'Starbucks Coffee', logo: theme.images.icons.transactionLogo2, date: '26.07.2019 - 3:13 PM', price: '-$58,30' }
   ]
