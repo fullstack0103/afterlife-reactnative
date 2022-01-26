@@ -71,7 +71,7 @@ const BottomSheet = (props) => {
 
   useEffect(() => {
     if (isForceExpand) {
-      setIsExpand(true)
+      bringUpActionSheet()
     }
   }, [isForceExpand])
 
