@@ -47,7 +47,11 @@
       "masterLogo": "",
       "cardChip": "",
       "visaLogo": "",
-      "horizontalDots": ""
+      "horizontalDots": "",
+      "verticalDots": "",
+      "lock": "",
+      "transactionLogo1": "",
+      "transactionLogo2": ""
     }
   }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { AText, AIcon, AButton, BottomSheet } from '../Shared'
 import { useTheme } from 'styled-components/native'
-import { ScrollView } from 'react-native-gesture-handler'
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 
 import {
   Container,
@@ -10,6 +10,10 @@ import {
 } from './styles'
 
 export const MyWallet = (props) => {
+  const {
+    onCardClick
+  } = props
+
   const theme = useTheme()
 
   return (
@@ -67,8 +71,9 @@ export const MyWallet = (props) => {
             />
           </View>
     
-          <View
+          <TouchableOpacity
             style={{ ...styles.walletCard, backgroundColor: '#051C3F' }}
+            onPress={() => onCardClick('masterCard')}
           >
             <View style={styles.walletCardHeader}>
               <AIcon
@@ -93,9 +98,10 @@ export const MyWallet = (props) => {
                 />
               </View>
             </View>
-          </View>
-          <View
+          </TouchableOpacity>
+          <TouchableOpacity
             style={{ ...styles.walletCard, backgroundColor: '#0F6EFF' }}
+            onPress={() => onCardClick('visa')}
           >
             <View style={styles.walletCardHeader}>
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -115,8 +121,8 @@ export const MyWallet = (props) => {
                 />
               </View>
             </View>
-          </View>
-             </ScrollView>
+          </TouchableOpacity>
+        </ScrollView>
       </BottomSheet>
     </Container>
   )

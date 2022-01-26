@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 export const Container = styled.SafeAreaView`
   background-color: #051c3f;
   flex: 1;
-  padding: 20px 28px;
+  padding: 30px 28px;
 `
 export const Header = styled.View`
   flex-direction: row;

@@ -5,9 +5,8 @@ import { MyWallet as MyWalletScreen } from '../components/MyWallet'
 export const MyWallet = (props) => {
   const myWalletProps = {
     ...props,
-    onNavigationRedirect: (page, params) => {
-      if (!page) return
-      props.navigation.navigate(page, params);
+    onCardClick: (slug) => {
+      props.navigation.navigate('SingleCard', { card: slug });
     }
   }
   return (
