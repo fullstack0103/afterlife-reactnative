@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { View, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, StyleSheet, TouchableOpacity as TouchableButton } from 'react-native'
 import { ABottomPopup, AButton, AIcon, AText } from '../Shared'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { useTheme } from 'styled-components/native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import {
   ExpandContainer,
@@ -65,7 +66,8 @@ export const ExpandedBottomTab = () => {
           style={{
             paddingVertical: 5,
             // zIndex: 10,
-            position: 'relative'
+            position: 'relative',
+            flex: 1
           }}
           onPress={() => setOpenModal(true)}
         >
@@ -86,7 +88,7 @@ export const ExpandedBottomTab = () => {
         >
           <ExpandContainer>
             <CollapseContainer>
-              <TouchableOpacity
+              <TouchableButton
                 style={{
                   paddingVertical: 5
                 }}
@@ -100,7 +102,7 @@ export const ExpandedBottomTab = () => {
                     borderRadius: 5
                   }}
                 />
-              </TouchableOpacity>
+              </TouchableButton>
             </CollapseContainer>
             <MainTabContainer>
               {mainTabOptions.map(tab => (
