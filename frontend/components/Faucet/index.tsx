@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, TouchableOpacity, StyleSheet } from 'react-native'
-import { AText, AButton, AIcon } from '../Shared'
+import { AText, AButton, AIcon, BottomSheet } from '../Shared'
 import { useTheme } from 'styled-components/native'
 
 import {
@@ -56,28 +56,30 @@ export const Faucet = (props) => {
           textStyle={styles.requestBtnText}
         />
       </View>
-      <MyActivityContainer>
-        <AText style={styles.activityTitle}>My Activity</AText>
-        <AButton
-          imgLeftSrc={theme.images.icons.limit}
-          imgLeftStyle={{ width: 24, height: 19, tintColor: '#949494' }}
-          text='View Limits'
-          textStyle={styles.viewLimitBtnText}
-          style={styles.viewLimitBtn}
-        />
-        {[...Array(10).keys()].map(i => (
-          <TouchableOpacity
-            key={i}
-            style={styles.requestItem}
-          >
-            <View>
-              <AText style={styles.requestTitle}>Request</AText>
-              <AText style={styles.requestDate}>26.07.2021 - 3:13 PM</AText>
-            </View>
-            <AText style={styles.requestTitle}>+25 LIFE</AText>
-          </TouchableOpacity>
-        ))}
-      </MyActivityContainer>
+      <BottomSheet>
+        <MyActivityContainer>
+          <AText style={styles.activityTitle}>My Activity</AText>
+          <AButton
+            imgLeftSrc={theme.images.icons.limit}
+            imgLeftStyle={{ width: 24, height: 19, tintColor: '#949494' }}
+            text='View Limits'
+            textStyle={styles.viewLimitBtnText}
+            style={styles.viewLimitBtn}
+          />
+          {[...Array(10).keys()].map(i => (
+            <TouchableOpacity
+              key={i}
+              style={styles.requestItem}
+            >
+              <View>
+                <AText style={styles.requestTitle}>Request</AText>
+                <AText style={styles.requestDate}>26.07.2021 - 3:13 PM</AText>
+              </View>
+              <AText style={styles.requestTitle}>+25 LIFE</AText>
+            </TouchableOpacity>
+          ))}
+        </MyActivityContainer>
+      </BottomSheet>
     </Container>
   )
 }
