@@ -12,7 +12,7 @@ import {
 
 export const GeneratedLifeReceival = (props: any) => {
   const {
-    onNavigationRedirect
+    navigation
   } = props
   const theme = useTheme()
 
@@ -149,6 +149,7 @@ export const GeneratedLifeReceival = (props: any) => {
             text='Close'
             style={styles.submitBtn}
             textStyle={{ color: '#2D2D2D',  fontSize: 16 }}
+            onClick={() => navigation?.goBack() && navigation.goBack()}
           />
         </View>
       </View>
