@@ -15,7 +15,6 @@ const DappListNavigator = (e : any) => {
         component={DappList}
         options={{ headerShown: false }}
       />
-
     </Stack.Navigator>
   )
 }
