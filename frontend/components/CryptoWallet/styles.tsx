@@ -13,10 +13,17 @@ export const HeaderWrapper = styled.View`
   padding-horizontal: 28px;
 `
 
-export const CardContainer = styled.View`
+export const CardContainer = styled.TouchableOpacity`
   background-color: #FFFFFF;
   border-radius: 12px;
   padding: 18px;
   width: 118px;
   margin-right: 10px;
+`
+
+export const Dot = styled.View`
+  width: 5px;
+  height: 5px;
+  border-radius: 50px;
+  background-color: #FFFFFF;
 `
