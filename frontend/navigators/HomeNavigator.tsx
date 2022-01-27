@@ -12,14 +12,17 @@ import SingleCard from '../pages/SingleCard'
 import CryptoWallet from '../pages/CryptoWallet'
 
 import Exchange from '../pages/Exchange'
-import TransactionHistory from '../pages/TransactionHistory';
+import TransactionHistory from '../pages/TransactionHistory'
+import CurrencyBalanceMore from '../pages/CurrencyBalanceMore'
 
 const Stack = createStackNavigator();
 
 const HomeNavigator = (e : any) => {
   const [{ auth }]: any = useSession()
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      initialRouteName='CurrencyBalanceMore'
+    >
       {auth ? (
         <>
           <Stack.Screen
@@ -70,6 +73,11 @@ const HomeNavigator = (e : any) => {
           <Stack.Screen
             name='TransactionHistory'
             component={TransactionHistory}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='CurrencyBalanceMore'
+            component={CurrencyBalanceMore}
             options={{ headerShown: false }}
           />
         </>
