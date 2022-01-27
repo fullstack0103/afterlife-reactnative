@@ -11,7 +11,8 @@ import MyWallet from '../pages/MyWallet'
 import SingleCard from '../pages/SingleCard'
 import CryptoWallet from '../pages/CryptoWallet'
 
-import { Exchange } from '../pages/Exchange'
+import Exchange from '../pages/Exchange'
+import TransactionHistory from '../pages/TransactionHistory';
 
 const Stack = createStackNavigator();
 
@@ -64,6 +65,11 @@ const HomeNavigator = (e : any) => {
           <Stack.Screen
             name='SingleCard'
             component={SingleCard}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='TransactionHistory'
+            component={TransactionHistory}
             options={{ headerShown: false }}
           />
         </>
