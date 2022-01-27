@@ -2,7 +2,7 @@ import React from 'react';
 import { Exchange as ExchangeScreen } from '../components/Exchange'
 import styled from 'styled-components/native'
 
-export const Exchange = (props) => {
+const Exchange = (props) => {
   const exchangeProps = {
     ...props,
     onNavigationRedirect: (page, params) => {
