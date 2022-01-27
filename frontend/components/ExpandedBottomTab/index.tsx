@@ -41,7 +41,7 @@ export const ExpandedBottomTab = (props) => {
   const mainTabOptions = [
     { key: 'home', name: 'Home', icon: theme.images.icons.list },
     { key: 'MyWallet', name: 'Wallet', icon: theme.images.icons.wallet },
-    { key: 'history', name: 'History', icon: theme.images.icons.history },
+    { key: 'TransactionHistory', name: 'History', icon: theme.images.icons.history },
     { key: 'profile', name: 'Profile', icon: theme.images.icons.user }
   ]
 

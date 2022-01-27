@@ -48,7 +48,13 @@ theme.images = {
     masterLogo: require('./assets/icons/master-logo.png'),
     cardChip: require('./assets/icons/card-chip.png'),
     visaLogo: require('./assets/icons/visa-logo.png'),
-    horizontalDots: require('./assets/icons/horizontal-dots.png')
+    horizontalDots: require('./assets/icons/horizontal-dots.png'),
+    verticalDots: require('./assets/icons/vertical-dots.png'),
+    lock: require('./assets/icons/lock.png'),
+    transactionLogo1: require('./assets/icons/logo-1.png'),
+    transactionLogo2: require('./assets/icons/logo-2.png'),
+    filterIcon: require('./assets/icons/filter.png'),
+    search: require('./assets/icons/search.png')
   }
 }
 

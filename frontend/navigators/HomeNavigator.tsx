@@ -10,8 +10,11 @@ import GeneratedLifeReceival from '../pages/GeneratedLifeReceival'
 import CurrencyBalance from '../pages/CurrencyBalance';
 import CryptoWallet from '../pages/CryptoWallet'
 import MyWallet from '../pages/MyWallet'
+import SingleCard from '../pages/SingleCard'
 
-import { Exchange } from '../pages/Exchange'
+import Exchange from '../pages/Exchange'
+import TransactionHistory from '../pages/TransactionHistory'
+import CurrencyBalanceMore from '../pages/CurrencyBalanceMore'
 
 const Stack = createStackNavigator();
 
@@ -64,6 +67,21 @@ const HomeNavigator = (e : any) => {
           <Stack.Screen
             name='MyWallet'
             component={MyWallet}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='SingleCard'
+            component={SingleCard}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='TransactionHistory'
+            component={TransactionHistory}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name='CurrencyBalanceMore'
+            component={CurrencyBalanceMore}
             options={{ headerShown: false }}
           />
         </>
