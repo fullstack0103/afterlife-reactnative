@@ -1,6 +1,8 @@
-import React from 'react'
-import { View, StyleSheet, Dimensions } from 'react-native'
+import React, { useState } from 'react'
+import { View, StyleSheet, Dimensions, Linking } from 'react-native'
 import { BottomSheet, AText, AButton } from '../Shared'
+import QRCodeScanner from 'react-native-qrcode-scanner'
+// import QRCode from 'react-native-qrcode-svg'
 
 import {
   Container,
@@ -11,6 +13,21 @@ import {
 const { height } = Dimensions.get('screen')
 
 export const QRCodeScan = (props) => {
+  const [isStartScan, setIsStartScan] = useState(false)
+  const [scanResult, setScanResult] = useState(null)
+
+  const onSuccess = (e) => {
+    const check = e.data.substring(0, 4)
+    console.log('scanned data' + check)
+    setScanResult(e)
+    setIsStartScan(false)
+    if (check === 'http') {
+        Linking.openURL(e.data).catch(err => console.error('An error occured', err));
+    } else {
+        setIsStartScan(false)
+    }
+  }
+
   return (
     <Container>
       <BottomSheet
@@ -21,6 +38,7 @@ export const QRCodeScan = (props) => {
         <View
           style={{
             flex: 1,
+            marginBottom: 20
           }}
         >
           <Header>
@@ -29,15 +47,73 @@ export const QRCodeScan = (props) => {
           </Header>
 
           <ScanContainer>
-
-          </ScanContainer>
-          <AText style={styles.loadingStyle}>Scanning Code…</AText>
-          <View style={{ flex: 1 }}>
-            <AButton
-              text='Cancel'
-              style={styles.btnStyle}
-              textStyle={styles.btnTextStyle}
+            {isStartScan && (
+              <QRCodeScanner
+                reactivate={true}
+                showMarker={true}
+                cameraProps={{
+                  // ratio: '1:1',
+                  captureAudio: false
+                }}
+                // containerStyle={{ width: 200, height: 200, alignSelf: 'center' }}
+                cameraStyle={{
+                  width: 300,
+                  height: 300,
+                  alignSelf: 'center',
+                  justifyContent: 'center',
+                  overflow: 'hidden',
+                  borderRadius: 12
+                }}
+                // ref={(node) => { this.scanner = node }}
+                onRead={onSuccess}
+                // topContent={}
+                // bottomContent={}
+                // showMarker={false}
             />
+            )}
+          </ScanContainer>
+  
+          {isStartScan && (
+            <AText style={styles.loadingStyle}>Scanning Code…</AText>
+          )}
+
+          {scanResult && !isStartScan && (
+            <View style={{ marginVertical: 20 }}>
+              <AText>Type : {scanResult.type}</AText>
+              <AText>Result : {scanResult.data}</AText>
+              <AText numberOfLines={1}>RawData: {scanResult.rawData}</AText>
+              {/* <QRCode
+                value={scanResult.data}
+                color={'#2C8DDB'}
+                backgroundColor={'white'}
+                size={100}
+                // logo={require('../../../embed_logo_file_path')}
+                // logoMargin={2}
+                // logoSize={20}
+                // logoBorderRadius={10}
+                // logoBackgroundColor={'transparent'}
+              /> */}
+            </View>
+          )}
+          <View style={{ flex: 1 }}>
+            {!isStartScan ? (
+              <AButton
+                text='Start'
+                // style={styles.btnStyle}
+                textStyle={{
+                  ...styles.btnTextStyle,
+                  color: '#FFF'
+                }}
+                onClick={() => setIsStartScan(true)}
+              />
+            ) : (
+              <AButton
+                text='Cancel'
+                style={styles.btnStyle}
+                textStyle={styles.btnTextStyle}
+                onClick={() => setIsStartScan(false)}
+              />
+            )}
           </View>
         </View>
       </BottomSheet>

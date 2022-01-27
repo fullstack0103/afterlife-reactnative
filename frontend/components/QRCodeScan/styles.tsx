@@ -12,6 +12,10 @@ export const Header = styled.View`
 `
 
 export const ScanContainer = styled.View`
-  flex: 1;
   min-height: 328px;
+  max-height: 328px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 50px 0px 20px 0px;
 `
