@@ -53,6 +53,7 @@ export const ExpandedBottomTab = (props) => {
   ]
 
   const handleNavigation = (page) => {
+    setOpenModal(false)
     navigation.navigate(page);
   }
 
