@@ -1,12 +1,11 @@
 import styled from 'styled-components/native';
 
-export const DappListContainer = styled.ScrollView`
+export const DappListContainer = styled.SafeAreaView`
   background-color: ${props => props.theme.colors.primary};
   flex: 1;
 `;
 
 export const WrapHeader = styled.View`
-  padding: 30px;
   margin-bottom: 5px;
 `
 
@@ -38,7 +37,7 @@ export const ColorBox = styled.View`
   background-color: ${(props: any) => props.boxColor && props.boxColor};
 `
 
-export const NewItemIconWrapper = styled.View`
+export const NewItemIconWrapper = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   background: rgba(15, 110, 255, 0.1);

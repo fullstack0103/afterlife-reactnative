@@ -7,10 +7,6 @@ export const Container = styled.SafeAreaView`
   justify-content: space-between;
 `
 
-export const TopWrapper = styled.View`
-  padding: 30px;
-`
-
 export const BottomWrapper = styled.ScrollView``
 
 export const LogoWrapper = styled.View`

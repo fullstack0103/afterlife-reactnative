@@ -6,7 +6,6 @@ import { useTheme } from 'styled-components/native'
 import { LineChart } from 'react-native-chart-kit'
 import {
   Container,
-  TopWrapper,
   BottomWrapper,
   LogoWrapper,
   ButtonWrapper,
@@ -14,6 +13,7 @@ import {
 } from './styles'
 
 export const CurrencyBalance = (props: any) => {
+  const { onNavigationRedirect } = props
   const chain = props.route?.params?.chain
   const theme = useTheme()
 
@@ -67,6 +67,7 @@ export const CurrencyBalance = (props: any) => {
                 text='Buy'
                 style={styles.buyBtn}
                 textStyle={{ color: '#FFFFFF',  fontSize: 16 }}
+                onClick={() => onNavigationRedirect('CurrencyBalanceMore')}
               />
             </View>
             <View style={{flex: 1, marginLeft: 5}}>
@@ -74,6 +75,7 @@ export const CurrencyBalance = (props: any) => {
                 text='Sell'
                 style={styles.sellBtn}
                 textStyle={{ color: '#0F6EFF',  fontSize: 16 }}
+                onClick={() => onNavigationRedirect('CurrencyBalanceMore')}
               />
             </View>
           </ButtonWrapper>
@@ -120,13 +122,15 @@ export const CurrencyBalance = (props: any) => {
               withHorizontalLabels={false}
               withOuterLines={false}
               withInnerLines={false}
-              withShadow={false}
+              // withShadow={false}
               chartConfig={{
                 backgroundColor: "#00CC96",
                 backgroundGradientFrom: "#FFFFFF",
                 backgroundGradientTo: "#FFFFFF",
+                fillShadowGradient: "#00CC96",
+                fillShadowGradientOpacity: 1,
                 decimalPlaces: 2, // optional, defaults to 2dp
-                color: () => `#0F6EFF`,
+                color: () => `#106EFE`,
                 labelColor: () => `#8F92A1`,
                 style: {
                   borderRadius: 16,
@@ -140,9 +144,7 @@ export const CurrencyBalance = (props: any) => {
               bezier
               style={{
                 marginVertical: 8,
-                borderRadius: 0,
-                paddingHorizontal: 0,
-                marginHorizontal: 0
+                borderRadius: 0
               }}
             />
           </View>

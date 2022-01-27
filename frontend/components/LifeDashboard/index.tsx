@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { SafeAreaView, Text } from 'react-native'
 import { AButton } from '../Shared'
 
 export const LifeDashboard = (props: any) => {
@@ -8,13 +8,13 @@ export const LifeDashboard = (props: any) => {
   } = props
 
   return (
-    <View>
-      <Text>Life Dashboard</Text>
+    <SafeAreaView style={{padding: 30}}>
+      <Text style={{textAlign: 'center', marginBottom: 25 }}>Life Dashboard</Text>
       <AButton
         text='Balance / My tokens'
         textStyle={{ color: 'white' }}
         onClick={() => onNavigationRedirect('LifeBalance')}
       />
-    </View>
+    </SafeAreaView>
   )
 }
