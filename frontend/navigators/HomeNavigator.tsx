@@ -26,11 +26,6 @@ const HomeNavigator = (e : any) => {
       {auth ? (
         <>
           <Stack.Screen
-            name='QRCodeScan'
-            component={QRCodeScan}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
             name='BottomTab'
             component={BottomNavigator}
             options={{ headerShown: false }}
@@ -90,11 +85,11 @@ const HomeNavigator = (e : any) => {
             component={CurrencyBalanceMore}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
+          <Stack.Screen
             name='QRCodeScan'
             component={QRCodeScan}
             options={{ headerShown: false }}
-          /> */}
+          />
         </>
       ) : (
         <Stack.Screen

@@ -23,7 +23,8 @@ const BottomNavigator = () => {
       borderTopLeftRadius: 32,
       position: 'relative',
       paddingTop: 20,
-      borderColor: theme.colors.white
+      borderColor: theme.colors.white,
+      zIndex: 99999
     },
     tabContainer: {
       position: 'relative',
@@ -44,7 +45,7 @@ const BottomNavigator = () => {
           ...styles.barStyle
         },
         headerShown: false,
-        tabBarShowLabel: false
+        tabBarShowLabel: false,
       }}
     >
       <Tab.Screen
