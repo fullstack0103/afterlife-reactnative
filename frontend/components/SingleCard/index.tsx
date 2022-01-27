@@ -1,7 +1,7 @@
 import React from 'react'
 import { AText, AButton, AIcon, BottomSheet } from '../Shared'
 import { useTheme } from 'styled-components/native'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, ImageBackground } from 'react-native'
 
 import {
   Container,
@@ -21,46 +21,47 @@ export const SingleCard = (props) => {
 
   return (
     <Container>
-      <AButton
-        imgLeftSrc={theme.images.icons.arrowLeft}
-        imgLeftStyle={{ tintColor: '#2D2D2D', width: 18, height: 18 }}
-        style={styles.arrowBg}
-        onClick={() => props.navigation?.canGoBack() && props.navigation.goBack()}
-      />
+      <ImageBackground source={theme.images.general.patternBg} resizeMode="cover" style={styles.image}>
+        <AButton
+          imgLeftSrc={theme.images.icons.arrowLeft}
+          imgLeftStyle={{ tintColor: '#2D2D2D', width: 18, height: 18 }}
+          style={styles.arrowBg}
+          onClick={() => props.navigation?.canGoBack() && props.navigation.goBack()}
+        />
 
-      <View
-        style={{ ...styles.walletCard, backgroundColor: '#051C3F' }}
-      >
-        <View style={styles.walletCardHeader}>
-          <AIcon
-            src={theme.images.icons.cardChip}
-            style={{
-              width: 35,
-              height: 28,
-              transform: [{ rotate: '90deg' }]
-            }}
-          />
-          <AText style={{ color: '#8F92A1', fontSize: 12 }}>Platinum</AText>
-          
-         </View>
-        <View style={{ justifyContent: 'flex-end', marginTop: 56 }}>
-          <AText style={{ color: '#FFF', fontSize: 14, fontWeight: '700' }}>Mastercard</AText>
-          <View style={styles.masterCardWrapper}>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <AIcon
-                src={theme.images.icons.horizontalDots}
-                style={{ width: 33, height: 16 }}
-              />
-              <AText style={styles.cardNumber}>1211</AText>
-            </View>
+        <View
+          style={{ ...styles.walletCard, backgroundColor: '#051C3F' }}
+        >
+          <View style={styles.walletCardHeader}>
             <AIcon
-              src={theme.images.icons.masterLogo}
-              style={{ width: 40, height: 25 }}
+              src={theme.images.icons.cardChip}
+              style={{
+                width: 35,
+                height: 28,
+                transform: [{ rotate: '90deg' }]
+              }}
             />
+            <AText style={{ color: '#8F92A1', fontSize: 12 }}>Platinum</AText>
+            
+          </View>
+          <View style={{ justifyContent: 'flex-end', marginTop: 56 }}>
+            <AText style={{ color: '#FFF', fontSize: 14, fontWeight: '700' }}>Mastercard</AText>
+            <View style={styles.masterCardWrapper}>
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <AIcon
+                  src={theme.images.icons.horizontalDots}
+                  style={{ width: 33, height: 16 }}
+                />
+                <AText style={styles.cardNumber}>1211</AText>
+              </View>
+              <AIcon
+                src={theme.images.icons.masterLogo}
+                style={{ width: 40, height: 25 }}
+              />
+            </View>
           </View>
         </View>
-      </View>
-
+      </ImageBackground>
       <ActionButtonWrapper>
         <AButton
           imgLeftSrc={theme.images.icons.verticalDots}
@@ -186,5 +187,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 18
+  },
+  image: {
+    paddingTop: 30,
+    paddingHorizontal: 28
   }
 })

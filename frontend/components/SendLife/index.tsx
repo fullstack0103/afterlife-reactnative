@@ -1,7 +1,7 @@
 import React from 'react'
-import { View, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native'
 import { useTheme } from 'styled-components/native'
-import { AButton, AText } from '../Shared'
+import { AButton, AText, BottomSheet } from '../Shared'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import {
   SendLifeContainer,
@@ -13,6 +13,8 @@ import {
   Divider,
   ContactWrapper
 } from './styles'
+
+const { height } = Dimensions.get('screen')
 
 export const SendLife = (props: any) => {
   const {
@@ -60,11 +62,8 @@ export const SendLife = (props: any) => {
     },
     contentStyle: {
       backgroundColor: '#FFFFFF',
-      paddingHorizontal: 28,
-      paddingVertical: 38,
-      borderTopLeftRadius: 30,
-      borderTopRightRadius: 30,
-      flex: 1
+      paddingVertical: 15,
+      paddingHorizontal: 5
     },
     submitBtnWrapper: {
       flexDirection: 'row',
@@ -117,150 +116,156 @@ export const SendLife = (props: any) => {
           />
         </ButtonWrapper>
       </WrapHeader>
-      <View style={styles.contentStyle}>
-        <AText
-          style={{ fontSize: 16, fontWeight: '700' }}
-          color='#2D2D2D'
-        >
-          Send Tokens
-        </AText>
-        <LifeWrapper>
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center'
-            }}
-          >
-            <ColorBox boxColor='#e7f1ff' />
-            <TouchableOpacity>
-              <SelectWrapper>
-                <AText
-                  style={{ fontSize: 14, marginRight: 5 }}
-                  color='#2D2D2D'
-                >
-                  LIFE
-                </AText>
-                <MaterialCommunityIcons
-                  name='chevron-down'
-                  size={14}
-                  color='#8F92A1'
-                />
-              </SelectWrapper>
-            </TouchableOpacity>
-          </View>
+      <BottomSheet
+        isForceExpand
+        sheetHeight={height * 0.55}
+        bgColor='#FFFFFF'
+      >
+        <View style={styles.contentStyle}>
           <AText
-            style={{ fontSize: 22, fontWeight: '700' }}
+            style={{ fontSize: 16, fontWeight: '700' }}
             color='#2D2D2D'
           >
-            50
+            Send Tokens
           </AText>
-        </LifeWrapper>
-        <Divider />
-        <View
-          style={{
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexDirection: 'row',
-            paddingVertical: 10
-          }}
-        >
-          <AText
-            style={{ fontSize: 12 }}
-            color='#8F92A1'
-          >
-            Available Balance
-          </AText>
-          <AText
-            style={{ fontSize: 12 }}
-            color='#0F6EFF'
-          >
-            75 LIFE
-          </AText>
-        </View>
-        <ContactWrapper>
-          <View>
+          <LifeWrapper>
             <View
               style={{
                 flexDirection: 'row',
                 alignItems: 'center'
               }}
             >
+              <ColorBox boxColor='#e7f1ff' />
+              <TouchableOpacity>
+                <SelectWrapper>
+                  <AText
+                    style={{ fontSize: 14, marginRight: 5 }}
+                    color='#2D2D2D'
+                  >
+                    LIFE
+                  </AText>
+                  <MaterialCommunityIcons
+                    name='chevron-down'
+                    size={14}
+                    color='#8F92A1'
+                  />
+                </SelectWrapper>
+              </TouchableOpacity>
+            </View>
+            <AText
+              style={{ fontSize: 22, fontWeight: '700' }}
+              color='#2D2D2D'
+            >
+              50
+            </AText>
+          </LifeWrapper>
+          <Divider />
+          <View
+            style={{
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexDirection: 'row',
+              paddingVertical: 10
+            }}
+          >
+            <AText
+              style={{ fontSize: 12 }}
+              color='#8F92A1'
+            >
+              Available Balance
+            </AText>
+            <AText
+              style={{ fontSize: 12 }}
+              color='#0F6EFF'
+            >
+              75 LIFE
+            </AText>
+          </View>
+          <ContactWrapper>
+            <View>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center'
+                }}
+              >
+                <AText
+                  style={{ fontSize: 14, fontWeight: '700' }}
+                  color='#2D2D2D'
+                >
+                  Send to Contact 
+                </AText>
+                <AText
+                  style={{ fontSize: 14 }}
+                  color='#2D2D2D'
+                >
+                  (Optional)
+                </AText>
+              </View>
+              <TouchableOpacity>
+                <SelectWrapper>
+                  <AText
+                    style={{ fontSize: 14, marginRight: 15 }}
+                    color='#8F92A1'
+                  >
+                    Contact 1
+                  </AText>
+                  <MaterialCommunityIcons
+                    name='chevron-down'
+                    size={14}
+                    color='#8F92A1'
+                  />
+                </SelectWrapper>
+              </TouchableOpacity>
+            </View>
+            <AButton
+              imgLeftSrc={theme.images.icons.multiUser}
+              imgLeftStyle={{ tintColor: '#8F92A1', width: 18, height: 18 }}
+              style={styles.multiUser}
+            />
+          </ContactWrapper>
+          <Divider />
+          <ContactWrapper>
+            <View>
               <AText
                 style={{ fontSize: 14, fontWeight: '700' }}
                 color='#2D2D2D'
               >
-                Send to Contact 
+                Address
               </AText>
               <AText
-                style={{ fontSize: 14 }}
-                color='#2D2D2D'
+                style={{ fontSize: 14, marginRight: 15 }}
+                color='#8F92A1'
               >
-                (Optional)
+                0x33c38961f55a0e9e301162fb…
               </AText>
             </View>
-            <TouchableOpacity>
-              <SelectWrapper>
-                <AText
-                  style={{ fontSize: 14, marginRight: 15 }}
-                  color='#8F92A1'
-                >
-                  Contact 1
-                </AText>
-                <MaterialCommunityIcons
-                  name='chevron-down'
-                  size={14}
-                  color='#8F92A1'
-                />
-              </SelectWrapper>
-            </TouchableOpacity>
-          </View>
-          <AButton
-            imgLeftSrc={theme.images.icons.multiUser}
-            imgLeftStyle={{ tintColor: '#8F92A1', width: 18, height: 18 }}
-            style={styles.multiUser}
-          />
-        </ContactWrapper>
-        <Divider />
-        <ContactWrapper>
-          <View>
-            <AText
-              style={{ fontSize: 14, fontWeight: '700' }}
-              color='#2D2D2D'
-            >
-              Address
-            </AText>
-            <AText
-              style={{ fontSize: 14, marginRight: 15 }}
-              color='#8F92A1'
-            >
-              0x33c38961f55a0e9e301162fb…
-            </AText>
-          </View>
-          <AButton
-            imgLeftSrc={theme.images.icons.barcode}
-            imgLeftStyle={{ tintColor: '#8F92A1', width: 18, height: 18 }}
-            style={styles.multiUser}
-          />
-        </ContactWrapper>
-        <Divider />
-        <View style={styles.submitBtnWrapper}>
-          <AButton
-            imgLeftSrc={theme.images.icons.clock}
-            imgLeftStyle={{ tintColor: '#0F6EFF', width: 28, height: 28 }}
-            style={styles.clockBtn}
-          />
-          <View style={{flex: 1, marginLeft: 10}}>
             <AButton
-              imgLeftSrc={theme.images.icons.rightUpArrow}
-              text='Send Now'
-              imgLeftStyle={{ tintColor: '#FFFFFF', width: 18, height: 18 }}
-              style={styles.submitBtn}
-              textStyle={{ color: '#FFFFFF',  fontSize: 16 }}
+              imgLeftSrc={theme.images.icons.barcode}
+              imgLeftStyle={{ tintColor: '#8F92A1', width: 18, height: 18 }}
+              style={styles.multiUser}
             />
+          </ContactWrapper>
+          <Divider />
+          <View style={styles.submitBtnWrapper}>
+            <AButton
+              imgLeftSrc={theme.images.icons.clock}
+              imgLeftStyle={{ tintColor: '#0F6EFF', width: 28, height: 28 }}
+              style={styles.clockBtn}
+            />
+            <View style={{flex: 1, marginLeft: 10}}>
+              <AButton
+                imgLeftSrc={theme.images.icons.rightUpArrow}
+                text='Send Now'
+                imgLeftStyle={{ tintColor: '#FFFFFF', width: 18, height: 18 }}
+                style={styles.submitBtn}
+                textStyle={{ color: '#FFFFFF',  fontSize: 16 }}
+              />
+            </View>
+            
           </View>
-          
-        </View>
-      </View>
+        </View> 
+      </BottomSheet>
     </SendLifeContainer>
   )
 }

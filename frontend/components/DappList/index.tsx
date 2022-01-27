@@ -1,11 +1,7 @@
 import React from 'react'
-import {
-  StyleSheet,
-  View
-} from 'react-native'
+import { StyleSheet, View, ImageBackground } from 'react-native'
 import { useTheme } from 'styled-components/native'
 import Icon from 'react-native-vector-icons/Feather'
-import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 import { AText, AIcon, AButton } from '../Shared'
 import {
   DappListContainer,
@@ -17,7 +13,7 @@ import {
   ColorBox,
   NewItemIconWrapper
 } from './styles'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 
 export const DappList = () => {
   const theme = useTheme()
@@ -56,7 +52,7 @@ export const DappList = () => {
     browserDapps: {
       backgroundColor: theme.colors.lightGray,
       paddingHorizontal: 28,
-      paddingVertical: 38,
+      paddingTop: 38,
       borderTopLeftRadius: 30,
       borderTopRightRadius: 30,
       flex: 1
@@ -112,6 +108,9 @@ export const DappList = () => {
       height: 18,
       minWidth: 18,
       tintColor: theme.colors.primary
+    },
+    image: {
+      padding: 30
     }
   })
 
@@ -165,78 +164,83 @@ export const DappList = () => {
   return (
     <DappListContainer>
       <WrapHeader>
-        <HeaderSection>
-          <AText
-            style={styles.logoTitle}
-            color={theme.colors.white}
-          >
-            Dapps
-          </AText>
-          <View
-            style={styles.notificationIcon}
-          >
-            <AIcon
-              src={theme.images.icons.notification}
-              width={18}
-              color={theme.colors.white}
-              style={{ marginHorizontal: 5 }}
-            />
-          </View>
-        </HeaderSection>
-        <TitleWrapper>
-          <AText
-            style={styles.welcomeTxt}
-            color={theme.colors.white}
-          >
-            welcome
-          </AText>
-          <View style={{ maxWidth: 250 }}>
+        <ImageBackground source={theme.images.general.patternBg} resizeMode="cover" style={styles.image}>
+          <HeaderSection>
             <AText
-              style={styles.title}
+              style={styles.logoTitle}
               color={theme.colors.white}
             >
-              2 connected Dapps
+              Dapps
             </AText>
+            <View
+              style={styles.notificationIcon}
+            >
+              <AIcon
+                src={theme.images.icons.notification}
+                width={18}
+                color={theme.colors.white}
+                style={{ marginHorizontal: 5 }}
+              />
+            </View>
+          </HeaderSection>
+          <TitleWrapper>
             <AText
-              style={styles.acrossTitle}
+              style={styles.welcomeTxt}
               color={theme.colors.white}
             >
-              across 2 chains
+              welcome
             </AText>
-          </View>
-        </TitleWrapper>
+            <View style={{ maxWidth: 250 }}>
+              <AText
+                style={styles.title}
+                color={theme.colors.white}
+              >
+                2 connected Dapps
+              </AText>
+              <AText
+                style={styles.acrossTitle}
+                color={theme.colors.white}
+              >
+                across 2 chains
+              </AText>
+            </View>
+          </TitleWrapper>
+        </ImageBackground>
       </WrapHeader>
       <WrapContent style={styles.browserDapps}>
-        <BrowserHeader>
-          <AText
-            style={styles.browserTitle}
-            color={theme.colors.headingColor}
-          >
-            Browse AfterLife Dapps
-          </AText>
-          <TouchableOpacity onPress={() => console.log('father')}>
-            <Icon
-              name="more-vertical"
-              size={18}
-              style={{ color: theme.colors.gray, marginLeft: 5 }}
-            />
-          </TouchableOpacity>
-        </BrowserHeader>
-        <View style={{ marginTop: 20 }}>
-          {afterLifeList.length > 0 && afterLifeList.map((dapp: any) => (
-            <AfterLifeCard dapp={dapp} key={dapp.id} />
-          ))}
-          <View
-            style={styles.newCardStyle}
-          >
-            <NewItemIconWrapper>
-                <AIcon
-                  src={theme.images.icons.plus}
-                  style={styles.plusIcon}
-                />
-            </NewItemIconWrapper>
+        <ScrollView>
+          <BrowserHeader>
+            <AText
+              style={styles.browserTitle}
+              color={theme.colors.headingColor}
+            >
+              Browse AfterLife Dapps
+            </AText>
+            <TouchableOpacity onPress={() => console.log('father')}>
+              <Icon
+                name="more-vertical"
+                size={18}
+                style={{ color: theme.colors.gray, marginLeft: 5 }}
+              />
+            </TouchableOpacity>
+          </BrowserHeader>
+          <View style={{ marginTop: 20 }}>
+            {afterLifeList.length > 0 && afterLifeList.map((dapp: any) => (
+              <AfterLifeCard dapp={dapp} key={dapp.id} />
+            ))}
+            <View
+              style={styles.newCardStyle}
+            >
+              <NewItemIconWrapper>
+                  <AIcon
+                    src={theme.images.icons.plus}
+                    style={styles.plusIcon}
+                  />
+              </NewItemIconWrapper>
+            </View>
           </View>
-        </View>
+        </ScrollView>
+        
       </WrapContent>
     </DappListContainer>
   )

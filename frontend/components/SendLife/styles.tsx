@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-export const SendLifeContainer = styled.ScrollView`
+export const SendLifeContainer = styled.SafeAreaView`
   flex: 1;
   background-color: #051C3F;
 `
