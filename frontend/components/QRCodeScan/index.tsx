@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, StyleSheet, Dimensions, Linking } from 'react-native'
 import { BottomSheet, AText, AButton } from '../Shared'
 import QRCodeScanner from 'react-native-qrcode-scanner'
-// import QRCode from 'react-native-qrcode-svg'
+import QRCode from 'react-native-qrcode-svg'
 
 import {
   Container,
@@ -28,6 +28,11 @@ export const QRCodeScan = (props) => {
     }
   }
 
+  const handleStartScan = () => {
+    setScanResult(null)
+    setIsStartScan(true)
+  }
+
   return (
     <Container>
       <BottomSheet
@@ -46,32 +51,34 @@ export const QRCodeScan = (props) => {
             <AText style={styles.description}>Align qr code within frame to scan</AText>
           </Header>
 
-          <ScanContainer>
-            {isStartScan && (
-              <QRCodeScanner
-                reactivate={true}
-                showMarker={true}
-                cameraProps={{
-                  // ratio: '1:1',
-                  captureAudio: false
-                }}
-                // containerStyle={{ width: 200, height: 200, alignSelf: 'center' }}
-                cameraStyle={{
-                  width: 300,
-                  height: 300,
-                  alignSelf: 'center',
-                  justifyContent: 'center',
-                  overflow: 'hidden',
-                  borderRadius: 12
-                }}
-                // ref={(node) => { this.scanner = node }}
-                onRead={onSuccess}
-                // topContent={}
-                // bottomContent={}
-                // showMarker={false}
-            />
-            )}
-          </ScanContainer>
+          {!scanResult && (
+              <ScanContainer>
+                {isStartScan && (
+                  <QRCodeScanner
+                    reactivate={true}
+                    showMarker={true}
+                    cameraProps={{
+                      // ratio: '1:1',
+                      captureAudio: false
+                    }}
+                    // containerStyle={{ width: 200, height: 200, alignSelf: 'center' }}
+                    cameraStyle={{
+                      width: 300,
+                      height: 300,
+                      alignSelf: 'center',
+                      justifyContent: 'center',
+                      overflow: 'hidden',
+                      borderRadius: 12
+                    }}
+                    // ref={(node) => { this.scanner = node }}
+                    onRead={onSuccess}
+                    // topContent={}
+                    // bottomContent={}
+                    // showMarker={false}
+                />
+              )}
+            </ScanContainer>
+          )}
   
           {isStartScan && (
             <AText style={styles.loadingStyle}>Scanning Code…</AText>
@@ -79,20 +86,22 @@ export const QRCodeScan = (props) => {
 
           {scanResult && !isStartScan && (
             <View style={{ marginVertical: 20 }}>
+              <View style={{ alignSelf: 'center', marginBottom: 10 }}>
+                <QRCode
+                  value={scanResult.data}
+                  color={'#2D2D2D'}
+                  backgroundColor={'white'}
+                  size={100}
+                  // logo={require('../../../embed_logo_file_path')}
+                  // logoMargin={2}
+                  // logoSize={20}
+                  // logoBorderRadius={10}
+                  // logoBackgroundColor={'transparent'}
+                />
+              </View>
               <AText>Type : {scanResult.type}</AText>
               <AText>Result : {scanResult.data}</AText>
               <AText numberOfLines={1}>RawData: {scanResult.rawData}</AText>
-              {/* <QRCode
-                value={scanResult.data}
-                color={'#2C8DDB'}
-                backgroundColor={'white'}
-                size={100}
-                // logo={require('../../../embed_logo_file_path')}
-                // logoMargin={2}
-                // logoSize={20}
-                // logoBorderRadius={10}
-                // logoBackgroundColor={'transparent'}
-              /> */}
             </View>
           )}
           <View style={{ flex: 1 }}>
@@ -104,7 +113,7 @@ export const QRCodeScan = (props) => {
                   ...styles.btnTextStyle,
                   color: '#FFF'
                 }}
-                onClick={() => setIsStartScan(true)}
+                onClick={() => handleStartScan()}
               />
             ) : (
               <AButton
