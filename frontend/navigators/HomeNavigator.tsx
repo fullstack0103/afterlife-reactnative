@@ -14,6 +14,7 @@ import CryptoWallet from '../pages/CryptoWallet'
 import Exchange from '../pages/Exchange'
 import TransactionHistory from '../pages/TransactionHistory'
 import CurrencyBalanceMore from '../pages/CurrencyBalanceMore'
+import QRCodeScan from '../pages/QRCodeScan'
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,11 @@ const HomeNavigator = (e : any) => {
     <Stack.Navigator>
       {auth ? (
         <>
+          <Stack.Screen
+            name='QRCodeScan'
+            component={QRCodeScan}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name='BottomTab'
             component={BottomNavigator}
@@ -78,6 +84,11 @@ const HomeNavigator = (e : any) => {
             component={CurrencyBalanceMore}
             options={{ headerShown: false }}
           />
+          {/* <Stack.Screen
+            name='QRCodeScan'
+            component={QRCodeScan}
+            options={{ headerShown: false }}
+          /> */}
         </>
       ) : (
         <Stack.Screen
