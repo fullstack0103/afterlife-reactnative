@@ -20,9 +20,7 @@ const Stack = createStackNavigator();
 const HomeNavigator = (e : any) => {
   const [{ auth }]: any = useSession()
   return (
-    <Stack.Navigator
-      initialRouteName='CurrencyBalanceMore'
-    >
+    <Stack.Navigator>
       {auth ? (
         <>
           <Stack.Screen
