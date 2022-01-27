@@ -15,7 +15,8 @@
       "logo": "",
       "home1": "",
       "homeImage": "",
-      "barcodeFrame": ""
+      "barcodeFrame": "",
+      "patternBg": ""
     },
     "icons": {
       "arrowDown": "",

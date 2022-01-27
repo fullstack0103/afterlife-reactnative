@@ -1,13 +1,11 @@
 import styled from 'styled-components/native'
 
-export const SendLifeContainer = styled.ScrollView`
+export const ReceiveLifeContainer = styled.SafeAreaView`
   flex: 1;
   background-color: #0F6EFF;
 `
 
-export const WrapHeader = styled.View`
-  padding: 40px 28px;
-`
+export const WrapHeader = styled.View``
 
 export const ButtonWrapper = styled.View`
   flex-direction: row;

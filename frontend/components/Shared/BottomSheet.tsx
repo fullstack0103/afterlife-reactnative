@@ -7,7 +7,8 @@ const { width, height } = Dimensions.get('screen')
 const BottomSheet = (props) => {
   const {
     children,
-    isForceExpand
+    isForceExpand,
+    noPadding
   } = props
 
   const sheetHeight = props?.sheetHeight ? props.sheetHeight : height / 2.4
@@ -24,7 +25,7 @@ const BottomSheet = (props) => {
       borderTopRightRadius: 40,
       borderTopLeftRadius: 40,
       overflow: 'hidden',
-      paddingHorizontal: 30,
+      paddingHorizontal: noPadding ? 0 : 30,
       paddingTop: 10,
     },
     toggleBtn: {

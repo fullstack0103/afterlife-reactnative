@@ -15,6 +15,7 @@ theme.images = {
     home1: require('./assets/images/home-1.png'),
     homeImage: require('./assets/images/home-image.png'),
     barcodeFrame: require('./assets/images/barcode-frame.png'),
+    patternBg: require('./assets/images/pattern-bg.png'),
   },
   icons: {
     arrowDown: require('./assets/icons/arrow-down.png'),
