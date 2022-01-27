@@ -104,6 +104,7 @@ export const ReceiveLife = (props: any) => {
               imgLeftStyle={{ tintColor: '#FFFFFF', width: 18, height: 18 }}
               style={styles.rightUpArrow}
               textStyle={styles.sendBtn}
+              onClick={() => onNavigationRedirect('QRCodeScan')}
             />
             <AButton
               imgLeftSrc={theme.images.icons.rightDownArrow}
